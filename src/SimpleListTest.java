@@ -169,10 +169,24 @@ public class SimpleListTest {
      * one element.
      */
     @Test void append() {
+        int expectedIndex = 1;
         SimpleList testList = new SimpleList();
-        testList.add(2);
         testList.append(1);
+        testList.append(2);
+        int actualIndex = testList.search(2);
 
-        
+        assertEquals(expectedIndex, actualIndex);
+    }
+
+    /**
+     * Tests append method for bad case. Testing the case where the element
+     * is not in the place its supposed to be. Testing unexpected behavior. 
+     */
+    @Test void testAppendBad() {
+        int badExpectedIndex = 1;
+        SimpleList testList = new SimpleList();
+        testList.append(1);
+        testList.append(2);
+        int badActualIndex = testList.searh
     }
 }
