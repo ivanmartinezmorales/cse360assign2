@@ -20,6 +20,7 @@ import java.util.List;
  */
 public class SimpleList {
     private int count;
+    private int capacity;
     private List<Integer> list;
 
     /**
@@ -28,7 +29,8 @@ public class SimpleList {
      */
     public SimpleList() {
         this.count = 0;
-        this.list = new ArrayList<>(10);
+        this.capacity = 10;
+        this.list = new ArrayList<>(this.capacity);
     }
 
     /**
@@ -43,12 +45,12 @@ public class SimpleList {
             this.list.add(value);
             this.count += 1;
 
-        } else if (this.count < 10) {
+        } else if (this.count < this.capacity) {
             this.list.add(0, value); // Prepending
             this.count += 1;
-
         } else {
-            int newCapacity = (int) this.list.size() * 1.5;
+            this.capacity = (int) this.list.size() * 1.5;
+            this.list.ensureCapacity(this.capacity);
             this.list.add(0, value);
             this.count += 1;
         }
