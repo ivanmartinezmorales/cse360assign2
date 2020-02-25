@@ -48,8 +48,8 @@ public class SimpleList {
             this.count += 1;
 
         } else {
+            int newCapacity = (int) this.list.size() * 1.5;
             this.list.add(0, value);
-            this.list.remove(10);
             this.count += 1;
         }
     }
