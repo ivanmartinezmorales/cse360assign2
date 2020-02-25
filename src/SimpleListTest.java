@@ -187,6 +187,66 @@ public class SimpleListTest {
         SimpleList testList = new SimpleList();
         testList.append(1);
         testList.append(2);
-        int badActualIndex = testList.searh
+        int badActualIndex = testList.search(1);
+        assertNotEquals(badExpectedIndex, badActualIndex);
+    }
+
+    /**
+     * Tests first() method. Testing the expected case where the first
+     * element is the one that we are searching for.
+     */
+    @Test void testFirst() {
+        int expectedIndex = 0;
+        SimpleList testList = new SimpleList();
+        testList.append(1);
+        testList.append(2);
+        int actualIndex = testList.search(1);
+        assertEquals(expectedIndex, actualIndex);
+    }
+
+    /**
+     * Tests first() method for bad case. Testing the non expected case 
+     * where the first element is not the one we are looking for.
+     */
+    @Test void testFirstBad() {
+        int expectedIndex = 1;
+        SimpleList testList = new SimpleList();
+        testList.append(1);
+        testList.append(2);
+        int actualIndex = testList.search(1);
+        assertNotEquals(expectedIndex, actualIndex);
+    }
+
+    /**
+     * Tests the size() method. Tests the good case where it actually 
+     * is supposed to work as intended.
+     */
+    @Test void testSize() {
+        int expectedSize = 10;
+        SimpleList testList = new SimpleList();
+        int actualSize = testList.size();
+        assertEquals(expectedSize, actualSize);
+    }
+
+    /**
+     * Tests the size() method for bad case. Tests the case where 
+     * the size is an incorrect value.
+     */
+    @Test void testSizeBad() {
+        int expectedSize = 12;
+        SimpleList testList = new SimpleList();
+        testList.append(1);
+        testList.append(2);
+        testList.append(3);
+        testList.append(4);
+        testList.append(5);
+        testList.append(6);
+        testList.append(7);
+        testList.append(8);
+        testList.append(9);
+        testList.append(10);
+        testList.append(11);
+        int actualBadSize = testList.size();
+        assertNotEquals(expectedSize, actualBadSize);
     }
 }
