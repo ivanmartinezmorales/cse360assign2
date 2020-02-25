@@ -134,6 +134,24 @@ public class SimpleList {
         this.list.add(value);
     }
 
+    /**
+     * Returns the first element in the list. 
+     * @return returns first value in the list. If the list is empty,
+     * then return -1. 
+     */
+    public int first() {
+        if (this.list.isEmpty()) {
+            return -1;
+        }
+        return this.list.get(0);
+    }
 
+    /**
+     * Return the current number of possible locations in this list.
+     * @return current number of possible locations in this list.
+     */
+    public int size() {
+        return this.list.size();
+    }
 }
 
