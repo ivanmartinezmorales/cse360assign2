@@ -2,9 +2,10 @@
  * Program Name: SimpleListTest
  * Program Author: Ivan Martinez Morales
  * Program Author ID: 355
- * Program Description: A test suite for SimpleList that utilizes JUnit Testing.
+ * Program Description: Tests methods and constructors used in SimpleList for 
+ * assignment 2. 
  */
-package assign1;
+package assign2;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.*;
@@ -160,5 +161,18 @@ public class SimpleListTest {
         assertEquals("Testing on searching for an elent where array length > 1.",
                 1, testList.search(1));
 
+    }
+
+    /**
+     * Tests append method. Verifies that elements may be append into 
+     * SimpleList. In this case, append an element to a list with only
+     * one element.
+     */
+    @Test void append() {
+        SimpleList testList = new SimpleList();
+        testList.add(2);
+        testList.append(1);
+
+        
     }
 }
