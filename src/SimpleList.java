@@ -67,6 +67,12 @@ public class SimpleList {
             this.list.remove(removeIndex);
             this.count -= 1;
         }
+
+        int lowerLimit = (int) this.count * 0.75;
+        if (this.list.size() <= lowerLimit) {
+            this.list.trimToSize(); // Trims to size of num elements in list.
+        }
+
     }
 
     /**
