@@ -113,4 +113,27 @@ public class SimpleList {
     public int search(int value) {
         return this.list.indexOf(value);
     }
+
+    /**
+     * Appends the given parameter to the end of the list. If the list is full,
+     * Then increase the size of the list by 50%. 
+     */
+    public void append(int value) {
+        if (value == null) { 
+            return; // no-op, fail silently
+        }
+
+        // Case 1. If the count is less than the initial size of the array
+        if (this.count < this.list.size()) {
+            this.list.add(value);
+            return;
+        }
+
+        int newCapacity = (int) this.list.size() * 1.5;
+        this.list.ensureCapacity(newCapacity);
+        this.list.add(value);
+    }
+
+
 }
+
